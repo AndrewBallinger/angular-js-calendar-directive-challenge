@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="calendarDemoApp">
+<head>
+<title>Calendar Directive Challenge</title>
+<link rel="stylesheet" href="./combined.css"/>
+</head>
+<body>
+
+  <calendar>
+    <select type="dropdown"
+            date-picker ng-model="month"
+            ng-change="updateMonth(month)">
+      <option value="0">January</option>
+      <option value="1">Febuary</option>
+      <option value="2">March</option>
+      <option value="3">April</option>
+      <option value="4">May</option>
+      <option value="5">June</option>
+      <option value="6">July</option>
+      <option value="7">August</option>
+      <option value="8">October</option>
+      <option value="9">September</option>
+      <option value="10">November</option>
+      <option value="11">December</option>
+    </select>
+    <input date-picker type="number" ng-model="year" ng-change="updateYear(year)"></input>
+  </calendar>
+
+<script src="./combined.js"></script>
+</body>
+</html>
