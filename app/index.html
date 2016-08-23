@@ -6,7 +6,25 @@
 </head>
 <body>
 
-<!-- your code for nav and calendar directive instance here -->
+  <calendar-view>
+    <select type="dropdown"
+            date-picker ng-model="month"
+            ng-change="updateDate()">
+      <option value="0">January</option>
+      <option value="1">Febuary</option>
+      <option value="2">March</option>
+      <option value="3">April</option>
+      <option value="4">May</option>
+      <option value="5">June</option>
+      <option value="6">July</option>
+      <option value="7">August</option>
+      <option value="8">October</option>
+      <option value="9">September</option>
+      <option value="10">November</option>
+      <option value="11">December</option>
+    </select>
+    <input type="number" ng-model="year" ng-change="updateDate()"></input>
+  </calendar-view>
 
 <script type="text/javascript" src="./bower_components/angular/angular.js"></script>
 <script type="text/javascript" src="./utilities/calendar-range/calendarRange.js"></script>

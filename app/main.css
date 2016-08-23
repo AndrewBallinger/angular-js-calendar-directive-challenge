@@ -1,1 +1,20 @@
-/* your css code goes here */
+.inactive {
+    background-color: lightgrey;
+}
+
+.day-number {
+    display: inline-block;
+    padding: 15px;
+}
+
+.day-box {
+    height: 100%;
+}
+
+day {
+    margin: 0;
+    border: 1px solid black;
+    width: 13%;
+    display: inline-block;
+    height: 100px;
+}
