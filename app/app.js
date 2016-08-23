@@ -1,6 +1,6 @@
 /* global angular CalendarRange */
 angular.module('calendarDemoApp', [])
-  .component('calendarView', {
+  .component('calendar', {
     templateUrl: 'calendar-template.html',
     controller : function () {
       var calendar = this;
@@ -27,29 +27,30 @@ angular.module('calendarDemoApp', [])
   })
   .component('day', {
     templateUrl: 'day-template.html',
-    controller : function () {
-      angular.merge(this, this.day);
-      this.number = this.day; //Resolve namespace collision... Awkward, but I think the result is worth it.
-    },
     controllerAs: 'day',
     bindings: {
-      day: "<",
-      number: "@"
+      inactive: "<",
+      number: "<"
     }
   })
   .directive('datePicker', function() { return {
     restrict: "A",
-    require: '^^calendarView',
+    scope: true,
+    require: '^^calendar',
     link: function (scope, element, attrs, calendar) {
       scope.month = '' + calendar.date.getMonth();
       scope.year = calendar.date.getFullYear();
 
-      scope.updateDate = () => {
-        var date = new Date();
-        date.setMonth(scope.month);
-        date.setYear(scope.year);
+      scope.updateMonth = (month) => {
+        var date = calendar.date;
+        date.setMonth(month);
         calendar.setDate(date);
       }
-      scope.updateDate();
+
+      scope.updateYear = (year) => {
+        var date = calendar.date;
+        date.setYear(year);
+        calendar.setDate(date);
+      }
     }
   }});

@@ -6,10 +6,10 @@
 </head>
 <body>
 
-  <calendar-view>
+  <calendar>
     <select type="dropdown"
             date-picker ng-model="month"
-            ng-change="updateDate()">
+            ng-change="updateMonth(month)">
       <option value="0">January</option>
       <option value="1">Febuary</option>
       <option value="2">March</option>
@@ -23,8 +23,8 @@
       <option value="10">November</option>
       <option value="11">December</option>
     </select>
-    <input type="number" ng-model="year" ng-change="updateDate()"></input>
-  </calendar-view>
+    <input date-picker type="number" ng-model="year" ng-change="updateYear(year)"></input>
+  </calendar>
 
 <script type="text/javascript" src="./bower_components/angular/angular.js"></script>
 <script type="text/javascript" src="./utilities/calendar-range/calendarRange.js"></script>
